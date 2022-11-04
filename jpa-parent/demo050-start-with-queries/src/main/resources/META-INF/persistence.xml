@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="mapping01table" transaction-type="RESOURCE_LOCAL">
+        <description>Querying</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping01table.Author</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
+            <property name="hibernate.generate_statistics" value="true"/>
+            <!--          Avoid next property as it prints to the console, use logging instead!-->
+            <!--            <property name="hibernate.show_sql" value="true"/>-->
+
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>
+            <property name="javax.persistence.jdbc.user" value="cursist"/>
+            <property name="javax.persistence.jdbc.password" value="${db.password}"/>
+            <property name="hibernate.hbm2ddl.auto"
+                      value="validate"/>
+            <!--            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>-->
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.sql-load-script-source"
+                      value="data.sql"/>
+<!--            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>-->
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="mapping02tables" transaction-type="RESOURCE_LOCAL">
+        <description>Querying</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping02tables.PublisherInfo</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping02tables.Publisher</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
+            <property name="hibernate.generate_statistics" value="true"/>
+            <!--          Avoid next property as it prints to the console, use logging instead!-->
+            <!--            <property name="hibernate.show_sql" value="true"/>-->
+
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>
+            <property name="javax.persistence.jdbc.user" value="cursist"/>
+            <property name="javax.persistence.jdbc.password" value="${db.password}"/>
+
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="none"/>
+            <!--            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>-->
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.sql-load-script-source"
+                      value="data.sql"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="mapping03tables" transaction-type="RESOURCE_LOCAL">
+        <description>Querying</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping03tables.Author</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping03tables.Title</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping03tables.Royalty</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
+            <property name="hibernate.generate_statistics" value="true"/>
+            <!--          Avoid next property as it prints to the console, use logging instead!-->
+            <!--            <property name="hibernate.show_sql" value="true"/>-->
+
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>
+            <property name="javax.persistence.jdbc.user" value="cursist"/>
+            <property name="javax.persistence.jdbc.password" value="${db.password}"/>
+
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="validate"/>
+            <!--            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>-->
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.sql-load-script-source"
+                      value="data.sql"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="mapping04tables" transaction-type="RESOURCE_LOCAL">
+        <description>Querying</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping04tables.Author</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping04tables.Royalty</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping04tables.Title</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping04tables.RoyaltyPK</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mapping04tables.ScheduledRoyalty</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
+            <property name="hibernate.generate_statistics" value="true"/>
+            <!--          Avoid next property as it prints to the console, use logging instead!-->
+            <!--            <property name="hibernate.show_sql" value="true"/>-->
+
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>
+            <property name="javax.persistence.jdbc.user" value="cursist"/>
+            <property name="javax.persistence.jdbc.password" value="${db.password}"/>
+
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="validate"/>
+            <!--            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>-->
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.sql-load-script-source"
+                      value="data.sql"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="mappingalltables" transaction-type="RESOURCE_LOCAL">
+        <description>Querying</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.Author</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.Royalty</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.Title</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.ScheduledRoyalty</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.Discount</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.Sale</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.Store</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.Publisher</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.PublisherInfo</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.Employee</class>
+        <class>com.infosupport.demo50startwithqueries.app.domain.mappingalltables.Job</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
+            <property name="hibernate.generate_statistics" value="true"/>
+            <!--          Avoid next property as it prints to the console, use logging instead!-->
+            <!--            <property name="hibernate.show_sql" value="true"/>-->
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>
+            <property name="javax.persistence.jdbc.user" value="cursist"/>
+            <property name="javax.persistence.jdbc.password" value="${db.password}"/>
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="validate"/>
+            <!--            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>-->
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.sql-load-script-source" value="data.sql"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/${db.name}"/>
+        </properties>
+    </persistence-unit>
+</persistence>
